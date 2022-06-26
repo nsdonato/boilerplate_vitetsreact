@@ -12,7 +12,9 @@
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"prepare": "husky install",
-		"test": "jest --watch"
+		"test": "jest --watch",
+		"lint": "eslint .",
+		"lint:fix": "eslint --fix ."
 	},
 	"dependencies": {
 		"jest-environment-jsdom": "^28.1.1",
@@ -49,7 +51,10 @@
 		"vite": "^2.9.9"
 	},
 	"lint-staged": {
-		"**/*": "prettier --write --ignore-unknown"
+		"*.{ts,tsx,md,css}": [
+			"eslint",
+			"prettier --write"
+		]
 	},
 	"jest": {
 		"preset": "ts-jest",
