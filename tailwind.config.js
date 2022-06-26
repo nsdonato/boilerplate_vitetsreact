@@ -1,4 +1,4 @@
-export default {
+module.exports = {
 	content: ['./*.html', './src/**/*.{ts,tsx,css}'],
 	theme: {
 		extend: {},

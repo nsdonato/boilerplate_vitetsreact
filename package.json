@@ -12,7 +12,7 @@
 		"build": "tsc && vite build",
 		"preview": "vite preview",
 		"prepare": "husky install",
-		"test": "jest"
+		"test": "jest --watch"
 	},
 	"dependencies": {
 		"jest-environment-jsdom": "^28.1.1",
