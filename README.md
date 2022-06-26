@@ -12,6 +12,8 @@ ESLint, Prettier, Husky, Lint Staged
 
 React
 
+React Router DOM
+
 TailwindCSS
 
 React Testing Library
