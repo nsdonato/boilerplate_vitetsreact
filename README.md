@@ -6,17 +6,20 @@ You can download this template to avoid setting up a project from scratch with t
 
 - [@nsdonato](https://www.github.com/nsdonato)
 
-## Tech Stack
+## Features
 
-ESLint, Prettier, Husky, Lint Staged
-
-React
-
-React Router DOM
-
-TailwindCSS
-
-React Testing Library
+- [Babel](https://babeljs.io/) with [preset-env](https://babeljs.io/docs/en/babel-preset-env)
+- [Prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/) with:
+  - [Simple Import Sort](https://github.com/lydell/eslint-plugin-simple-import-sort/)
+  - [Import plugin](https://github.com/benmosher/eslint-plugin-import/)
+  - And a few other ES2015+ related rules
+- [Husky](https://github.com/typicode/husky)
+- [Lint Staged](https://github.com/okonet/lint-staged)
+- [React](https://reactjs.org/)
+- [Tailwind](https://tailwindcss.com/)
+- [React Router](https://reactrouter.com/docs/en/v6/getting-started/overview)
+- [Jest](https://jestjs.io) with [DOM Testing Library](https://testing-library.com/docs/dom-testing-library/intro)
 
 ## Run Locally
 

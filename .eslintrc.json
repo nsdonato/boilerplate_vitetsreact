@@ -6,6 +6,7 @@
 	},
 	"extends": [
 		"eslint:recommended",
+		"plugin:prettier/recommended",
 		"plugin:react/recommended",
 		"plugin:@typescript-eslint/recommended",
 		"plugin:react/jsx-runtime",
@@ -19,6 +20,21 @@
 		"ecmaVersion": "latest",
 		"sourceType": "module"
 	},
-	"plugins": ["react", "@typescript-eslint"],
-	"rules": {}
+	"plugins": ["react", "@typescript-eslint", "simple-import-sort", "import"],
+	"rules": {
+		"no-console": ["error", { "allow": ["error"] }],
+		"no-var": "error",
+		"object-shorthand": "error",
+		"prefer-const": "error",
+		"prefer-template": "error",
+		"prefer-destructuring": "warn",
+		"prefer-rest-params": "warn",
+		"prefer-spread": "warn",
+		"yoda": "error",
+		"simple-import-sort/imports": "error",
+		"simple-import-sort/exports": "error",
+		"import/first": "error",
+		"import/newline-after-import": "error",
+		"import/no-duplicates": "error"
+	}
 }

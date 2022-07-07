@@ -1,4 +1,4 @@
-import { render, queries, RenderOptions } from '@testing-library/react'
+import { queries, render, RenderOptions } from '@testing-library/react'
 import { ReactElement } from 'react'
 
 const customRender = (

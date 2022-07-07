@@ -1,5 +1,5 @@
 {
-	"name": "skeleton_vitetsreact",
+	"name": "boilerplate_vitetsreact",
 	"author": {
 		"name": "Noelia Donato",
 		"url": "https://github.com/nsdonato"
@@ -13,9 +13,13 @@
 		"preview": "vite preview",
 		"prepare": "husky install",
 		"test": "jest --watch",
-		"lint": "eslint .",
-		"lint:fix": "eslint --fix ."
+		"lint": "eslint --ignore-path .gitignore . --ext .ts,.tsx",
+		"lint:fix": "npm run lint -- --fix"
 	},
+	"browserslist": [
+		"defaults",
+		"not IE 11"
+	],
 	"dependencies": {
 		"jest-environment-jsdom": "^28.1.1",
 		"react": "^18.0.0",
@@ -38,7 +42,10 @@
 		"autoprefixer": "^10.4.7",
 		"eslint": "^8.18.0",
 		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-react": "^7.30.1",
+		"eslint-plugin-simple-import-sort": "^7.0.0",
 		"husky": "^8.0.1",
 		"identity-obj-proxy": "^3.0.0",
 		"jest": "^28.1.1",
