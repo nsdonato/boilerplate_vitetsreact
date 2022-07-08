@@ -31,25 +31,51 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: npm ci
       - name: 💅🏼 Linting
         run: npm run lint
+  build:
+    needs: [lint]
+    runs-on: ubuntu-latest
+    name: 👷🏻‍♀️ Building
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: npm ci
+      - name: 👷🏻‍♀️ Build
+        run: npm run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: dist
+          path: dist
   testing:
+    needs: [lint, build]
     runs-on: ubuntu-latest
     name: ✅ Testing
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - name: ✅ Testing
-        run: npm run test
-  build:
-    runs-on: ubuntu-latest
-    name: 👷🏻‍♀️ Build
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v2
         with:
           node-version: 16
           registry-url: 'https://registry.npmjs.org'
-      - name: 👷🏻‍♀️ Build dependencies
-        run: npm run build
+      - name: Install dependencies
+        run: npm ci
+      - uses: actions/download-artifact@v2
+        with:
+          name: dist
+          path: dist
+      - name: ✅ Unit testing
+        run: npm run test
