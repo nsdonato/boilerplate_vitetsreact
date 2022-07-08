@@ -1,11 +1,16 @@
 name: CI
 
-on: push
+on:
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+  push:
+    branches: [main]
 
 jobs:
-  lint:
+  deploy:
     runs-on: ubuntu-latest
-    name: 🚀 Lint
+    name: 🚀 Deploy
     timeout-minutes: 15
 
     steps:
@@ -13,10 +18,13 @@ jobs:
         uses: actions/checkout@v2
 
       - name: 📥 Install Dependencies
-        run: npm install
+        run: npm install --no-audit --no-fund --no-optional
 
       - name: 💅 Lint
         run: npm run lint
+
+      - name: 👷🏻‍♀️ Build
+        run: npm run build
 
       - name: ✅ Unit tests
         run: npm run test

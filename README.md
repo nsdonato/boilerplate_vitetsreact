@@ -53,6 +53,8 @@ To run tests, run the following command
   npm run test
 ```
 
+If you have problems running tests on mac: https://github.com/facebook/draft-js/issues/2183
+
 ## Feedback
 
 If you have any feedback, please reach out to us at noeliadonato@gmail.com
