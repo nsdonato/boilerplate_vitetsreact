@@ -7,48 +7,49 @@ on:
     branches: [main]
 
 jobs:
-  # Cancel Previous Redundant Builds
   check-skip:
+    name: ✋🏼 Cancel Previous Redundant Builds
     runs-on: ubuntu-latest
     steps:
       - name: ✋🏼 Cancel Previous Redundant Builds
         uses: styfle/cancel-workflow-action@0.6.0
         with:
           access_token: ${{ github.token }}
-  # Assigns the event creator to the PR
   assign_pr_owner:
     runs-on: ubuntu-latest
+    name: 📝 Assign PR to creator
     steps:
       - name: 📝 Assign PR to creator
         uses: thomaseizinger/assign-pr-creator-action@v1.0.0
         if: github.event_name == 'pull_request' && github.event.action == 'opened'
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-  # Creates a build
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: 👷🏻‍♀️ Build dependencies
-        run: |
-          npm run build
-  # Lint the code
   lint:
     runs-on: ubuntu-latest
+    name: 💅🏼 Linting
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - name: 💅🏼 Linting
-        run: |
-          npm run lint
-  # Test components
+        run: npm run lint
   testing:
     runs-on: ubuntu-latest
+    name: ✅ Testing
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - name: ✅ Testing
-        run: |
-          npm run test
+        run: npm run test
+  build:
+    runs-on: ubuntu-latest
+    name: 👷🏻‍♀️ Build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
+      - name: 👷🏻‍♀️ Build dependencies
+        run: npm run build
