@@ -6,7 +6,7 @@ You can download this template to avoid setting up a project from scratch with t
 
 - [@nsdonato](https://www.github.com/nsdonato)
 
-## Features
+## Features ✨
 
 - [Babel](https://babeljs.io/) with [preset-env](https://babeljs.io/docs/en/babel-preset-env)
 - [Prettier](https://prettier.io/)
@@ -16,10 +16,13 @@ You can download this template to avoid setting up a project from scratch with t
   - And a few other ES2015+ related rules
 - [Husky](https://github.com/typicode/husky)
 - [Lint Staged](https://github.com/okonet/lint-staged)
+- [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/)
 - [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind](https://tailwindcss.com/)
 - [React Router](https://reactrouter.com/docs/en/v6/getting-started/overview)
 - [Jest](https://jestjs.io) with [DOM Testing Library](https://testing-library.com/docs/dom-testing-library/intro)
+- [GitHub Actions](https://github.com/features/actions)
 
 ## Run Locally
 
@@ -54,6 +57,14 @@ To run tests, run the following command
 ```
 
 If you have problems running tests on mac: https://github.com/facebook/draft-js/issues/2183
+
+## GitHhub Actions Pipeline
+
+- ✋🏼 Cancel Previous Redundant Builds
+- 📝 Assign PR to creator
+- 💅🏼 Linting
+- 👷🏻‍♀️ Build
+- 🧐 Testing
 
 ## Feedback
 

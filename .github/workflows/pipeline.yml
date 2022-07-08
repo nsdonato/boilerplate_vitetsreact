@@ -42,7 +42,7 @@ jobs:
   build:
     needs: [lint]
     runs-on: ubuntu-latest
-    name: 👷🏻‍♀️ Building
+    name: 👷🏻‍♀️ Build
     steps:
       - uses: actions/checkout@v2
         with:
@@ -62,7 +62,7 @@ jobs:
   testing:
     needs: [lint, build]
     runs-on: ubuntu-latest
-    name: ✅ Testing
+    name: 🧐 Testing
     steps:
       - uses: actions/checkout@v2
         with:
@@ -77,5 +77,5 @@ jobs:
         with:
           name: dist
           path: dist
-      - name: ✅ Unit testing
+      - name: 🧐 Unit testing
         run: npm run test
