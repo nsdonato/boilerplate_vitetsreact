@@ -8,9 +8,9 @@ on:
     branches: [main]
 
 jobs:
-  deploy:
+  pipeline:
     runs-on: ubuntu-latest
-    name: 🚀 Deploy
+    name: 🚀 Pipeline
     timeout-minutes: 15
 
     steps:
